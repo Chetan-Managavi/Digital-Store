@@ -1,0 +1,34 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+    <Dialog contentHeight="50%" contentWidth="35%" title="Login" titleAlignment="Center">
+    
+        <VBox class="sapUiSmallMargin">
+
+            <Label text="User Name" labelFor="idusername" class="sapUiTinyMargin"></Label>
+            <Input value="{userprofile>/login/username}" class="sapUiTinyMargin" required="true"></Input>
+
+
+            <Label text="Password" labelFor="idpassword" class="sapUiTinyMargin"></Label>
+            <Input  type="Password" value="{userprofile>/login/username}" class="sapUiTinyMargin" required="true"></Input>  
+
+        <HBox  justifyContent="SpaceAround">
+            <Link text="Signup" press=".onSignupLinkPress"></Link> 
+            <Link text="Forgot Password?" press=".onSignupLinkPress"></Link>   
+        </HBox>  
+        </VBox>
+
+        
+
+        <beginButton>
+            <Button text="Login" press="loginuser" ></Button>        
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" press="onDialogClosed"></Button>
+        </endButton>
+    
+    
+    
+    </Dialog>
+</c:FragmentDefinition>

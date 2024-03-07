@@ -1,0 +1,46 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+<ResponsivePopover contentHeight="50%" contentWidth="20%" title="Filter By">
+
+
+    
+    <Panel expandable="true" headerText="Color">
+        <VBox items="{filters>/color}" id="idfiltercolor">
+            <CheckBox text="{filters>value}"></CheckBox> 
+        </VBox>
+    </Panel>
+
+    <Panel expandable="true" headerText="Name">
+        <VBox items="{filters>/name}" id="idfiltername">
+            <CheckBox text="{filters>value}"></CheckBox> 
+        </VBox>
+    </Panel>
+
+    <Panel expandable="true" headerText="Rom">
+    
+        <VBox items="{filters>/rom}" id="idfilterrom">
+            <CheckBox text="{filters>value}"></CheckBox> 
+        </VBox>
+    </Panel>
+
+    <Panel expandable="true" headerText="Display">
+        <VBox items="{filters>/size}" id="idfiltersize">
+            <CheckBox text="{filters>value}"></CheckBox> 
+        </VBox>
+    </Panel>
+
+
+
+    <beginButton>
+        <Button text="Apply Filters" press=".onapplyfilters"></Button>
+    </beginButton>
+    <endButton>
+        <Button text="Reset"></Button>
+    </endButton>
+
+
+
+</ResponsivePopover>
+</c:FragmentDefinition>

@@ -1,0 +1,111 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    controllerName="com.incture.digitalstore.controller.Products"
+>
+    <Page
+        title="Digital Store"
+        enableScrolling="false"
+    >
+        <FlexBox
+            width="100%"
+            height="100%"
+            fitContainer="true"
+        >
+            <core:Fragment fragmentName="com.incture.digitalstore.fragments.Navigationbar" />
+            <VBox
+                width="100%"
+                class="sapUiSmallMargin"
+            >
+                <IconTabBar
+                    class="producttab"
+                    select=".onfilterselect"
+                >
+                    <items>
+                        <IconTabFilter
+                            showAll="true"
+                            text="All products"
+                        />
+                        <IconTabFilter
+                            icon="sap-icon://iphone"
+                            text="64GB ROM"
+                            key="ROM"
+                        />
+                        <IconTabFilter
+                            icon="sap-icon://palette"
+                            text="color"
+                            key="Color"
+                        />
+                    </items>
+                </IconTabBar>
+                <Toolbar>
+                    <Button
+                        text="Apply More Filters"
+                        icon="sap-icon://filter"
+                        press="onApplyMoreFiltersButtonPress"
+                    />
+                    <ToolbarSeparator />
+                    <SearchField
+                        placeholder="Model Name"
+                        search=".searchproducts"
+                    />
+                </Toolbar>
+                <ScrollContainer
+                    vertical="true"
+                    height="100%"
+                    width="100%"
+                    class=""
+                >
+                    <List
+                        id="idProductsList"
+                        backgroundDesign="Solid"
+                        headerText="Products"
+                        items="{products>/}"
+                    >
+                        <items>
+                            <ObjectListItem
+                                title="{products>name}"
+                                icon="{products>productImage}"
+                                number="{
+                                    parts: ['products>price', 'currency>currency'],
+                                    type: 'sap.ui.model.type.Currency'
+                                }"
+                                numberUnit="{currency>/currency}"
+                                type="Navigation"
+                                press=".showproductdetails"
+                            >
+                                <ObjectAttribute
+                                    title="Color"
+                                    text="{products>color}"
+                                />
+                                <ObjectAttribute
+                                    title="Model Name"
+                                    text="{products>modeName}"
+                                />
+                                <ObjectAttribute
+                                    title="ROM"
+                                    text="{products>ROM}"
+                                />
+                                <ObjectAttribute
+                                    title="Display"
+                                    text="{products>size}"
+                                />
+                                <ObjectAttribute
+                                    title="Camera"
+                                    text="{products>camera}"
+                                />
+                            </ObjectListItem>
+                        </items>
+                    </List>
+                </ScrollContainer>
+            </VBox>
+        </FlexBox>
+        <!-- Flex box aggregation works -->
+        <!-- <FlexBox items="{products>/}" direction="Column">
+        
+            <Text text="{products>name}"></Text>
+        
+        </FlexBox> -->
+    </Page>
+</mvc:View>

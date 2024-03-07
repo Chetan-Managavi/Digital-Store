@@ -1,0 +1,65 @@
+<mvc:View xmlns:cssgrid="sap.ui.layout.cssgrid" controllerName="com.incture.digitalstore.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    
+    >
+    <Page id="page" title="{i18n>title}" enableScrolling="false">
+
+    <headerContent>
+        
+        <Button text="{i18n>loginbuttonstate}" icon="sap-icon://account"></Button>
+        <Text text="{ 
+            parts: ['userprofile>/login/username','userprofile>/loggedin'],
+            formatter: '.formatter.fnloginstate'
+         }">
+            
+        </Text>
+    </headerContent>
+        
+        
+    
+    <FlexBox width="100%" height="100%">
+        
+    <core:Fragment fragmentName="com.incture.digitalstore.fragments.Navigationbar" type="XML" />
+    
+        <ScrollContainer vertical="true" height="100%" width="100%">
+        <VBox  class="carousel">
+        <Carousel loop="true" width="100%">
+                <Image src="{products>/0/productImage}" alt="Example picture of speakers" />
+                <Image src="{products>/1/productImage}" alt="Example picture of USB flash drive" />
+                <Image src="{products>/2/productImage}" alt="Example picture of spotlight" />
+                <Image src="{products>/3/productImage}" alt="Example picture of screw" />
+
+        </Carousel>
+
+        <cssgrid:CSSGrid  gridTemplateColumns="auto auto auto">
+        
+        <Image src="{products>/0/productImage}" height="50%" width="50%" ></Image>
+        <Image src="{products>/1/productImage}" height="50%" width="50%"></Image>
+        <Image src="{products>/2/productImage}" height="50%" width="50%"></Image>
+        <Image src="{products>/3/productImage}" height="50%" width="50%"></Image>
+        <Image src="{products>/4/productImage}" height="50%" width="50%"></Image>
+        <Image src="{products>/5/productImage}" height="50%" width="50%"></Image> 
+        
+        <!-- <core:Icon src="sap-icon://account"></core:Icon>
+        <core:Icon src="sap-icon://account"></core:Icon>
+        <core:Icon src="sap-icon://account"></core:Icon>
+        <core:Icon src="sap-icon://account"></core:Icon>
+        <core:Icon src="sap-icon://account"></core:Icon>
+        <core:Icon src="sap-icon://account"></core:Icon>
+         -->
+        
+        </cssgrid:CSSGrid>
+        
+
+    </VBox>
+    </ScrollContainer>
+    </FlexBox>
+    
+    
+    
+</Page>
+
+    
+</mvc:View>

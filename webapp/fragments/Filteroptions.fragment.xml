@@ -1,0 +1,21 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+<ResponsivePopover >
+    <Page>
+
+    <VBox >
+        <CheckBox text="green"></CheckBox>
+        <CheckBox text="black"></CheckBox>
+        <CheckBox text="blue"></CheckBox>
+        <CheckBox text="white"></CheckBox>
+        <CheckBox text="purple"></CheckBox>
+    </Page>
+
+    </VBox>
+
+
+</ResponsivePopover>
+
+</c:FragmentDefinition>

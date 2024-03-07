@@ -1,0 +1,87 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+>
+    <Dialog
+        contentHeight="50%"
+        contentWidth="50%"
+        title="Order Details"
+    >
+        <VBox class="sapUiSmallMargin">
+            <Label
+                text="Name"
+                labelFor="idname"
+            />
+            <Input
+                id="idname"
+                type="Text"
+                value="{orderdetails/username}"
+                required="true"
+            />
+            <Label
+                text="Mobile Number"
+                labelFor="idmobile"
+            />
+            <Input
+                id="idmobile"
+                type="Tel"
+                value="{orderdetails/mobilenumber}"
+                required="true"
+            />
+            <Label
+                text="Email-id"
+                labelFor="idemail"
+            />
+            <Input
+                id="idemail"
+                type="Email"
+                value="{orderdetails/email-id}"
+                required="true"
+            />
+            <HBox justifyContent="SpaceAround">
+                <VBox>
+                    <Text text="Price per unit" />
+                    <Text
+                        id="idprice"
+                        text="{products>price} $"
+                    />
+                </VBox>
+                <VBox>
+                    <Label
+                        text="Quantity"
+                        labelFor="idqty"
+                    />
+                    <Select
+                        id="idqty"
+                        items="{quantity>/}"
+                        change=".calculatetotalprice"
+                        required="true"
+                    >
+                        <items>
+                            <c:ListItem text="{quantity>value}"/>
+                        </items>
+                    </Select>
+              
+        
+                </VBox>
+            </HBox>
+
+
+
+            <Text text="Total Price {orderdetails>/totalprice}" />
+        </VBox>
+        <!-- <Button text="close" press=".onDialogClosed"/> -->
+        <beginButton>
+            <Button
+                text="Confirm order"
+                press=".onConfirmOrderButtonPress"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                text="Exit"
+                press="onpurchaseclosed"
+            />
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>

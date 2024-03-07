@@ -1,0 +1,53 @@
+<mvc:View
+	controllerName="com.incture.digitalstore.controller.ProductDetails"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+<Page title="Product Details" enableScrolling="false">
+
+
+
+	<FlexBox height="100%" width="100%">
+		<core:Fragment fragmentName="com.incture.digitalstore.fragments.Navigationbar" type="XML" />
+
+		<VBox width="100%" class="productdetails sapUiSmallMargin" >
+
+			<Panel headerText="{products>name}" >
+
+			<headerToolbar >
+				<Toolbar  >
+					<Button icon="sap-icon://nav-back" press=".navtoproduct"></Button>
+					<Text text="{products>name}"></Text>		
+				</Toolbar>
+
+			</headerToolbar>
+						
+			<HBox >
+				<Image src="{products>productImage}"  width="75%" class="sapUiSmallMargin"></Image>
+
+			  <VBox class="sapUiSmallMargin productinfo">
+			  	
+				<FormattedText htmlText="{htmlmodel>/modelname}" class="sapUiTinyMargin"></FormattedText>
+				<FormattedText htmlText="{htmlmodel>/modelnumber}" class="sapUiTinyMargin"></FormattedText>
+				<FormattedText htmlText="{htmlmodel>/size}" class="sapUiTinyMargin"></FormattedText>
+				<FormattedText htmlText="{htmlmodel>/camera}" class="sapUiTinyMargin"></FormattedText>
+				<FormattedText htmlText="{htmlmodel>/ROM}" class="sapUiTinyMargin"></FormattedText>
+				<FormattedText htmlText="{htmlmodel>/description}" class="sapUiTinyMargin"></FormattedText>
+			  </VBox>
+			</HBox>
+			<HBox justifyContent="SpaceAround" alignContent="Center" alignItems="Center">
+				<FormattedText htmlText="{htmlmodel>/price}" class="sapUiLargeMarginBeginEnd"></FormattedText>
+				<FormattedText htmlText="{htmlmodel>/color}" class="sapUiLargeMarginBeginEnd"></FormattedText>
+				<Button text="Buy Product" class="sapUiLargeMarginBeginEnd buyproductbutton" width="100%" press=".onbuyproductbutton" ></Button>
+			</HBox>
+			</Panel>
+		
+		</VBox>
+	</FlexBox>
+</Page>
+
+</mvc:View>

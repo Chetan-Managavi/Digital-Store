@@ -1,0 +1,51 @@
+/* Enter your custom styles here */
+.navbar{
+    background-color: #fff;
+    float: left;
+    height:  100%;
+    /* width: 25%; */
+
+}  
+
+.navitem{
+    padding: 40px;
+    font-size: larger;
+    text-align: center;
+}
+
+.productdetails{
+
+    background-color: #fff;
+
+}
+
+/* not working */
+.productinfo{
+
+    margin-top: 100px;
+}
+
+.buyproductbutton .sapMBtnInner.sapMBtnHoverable.sapMFocusable.sapMBtnText.sapMBtnDefault{
+
+    background-color: red;
+    color: white;
+
+}
+.sapMBtnInner .sapMBtnHoverable .sapMFocusable .sapMBtnText .sapMBtnDefault{
+    background-color: red;
+    color:white
+
+    
+
+
+}
+
+
+
+
+
+
+
+
+
+

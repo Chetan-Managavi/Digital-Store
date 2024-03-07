@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <VBox id="_IDGenVBox1" class="navbar" width="20%" height="100%">
+        <Image id="idlogo" src="./Assets/Images/logo.avif" height="100%" width="50%"></Image>
+        <List>
+            <StandardListItem type="Navigation" title="Home" class="navitem" press=".navtohome"/>
+            <StandardListItem type="Navigation" title="Login" class="navitem" press=".openlogindialog"/>
+            <StandardListItem type="Navigation" title="Products" class="navitem" press=".navtoproduct" />
+            <StandardListItem type="Navigation" title="About us" class="navitem" />
+        </List>
+    </VBox>
+</core:FragmentDefinition>

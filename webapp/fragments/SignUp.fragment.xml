@@ -1,0 +1,89 @@
+<c:FragmentDefinition 
+
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    >
+
+    <Dialog contentHeight="50%" contentWidth="50%" title="Sign Up">
+
+        <FlexBox class="custom_flex_css">
+            
+            <form:Form  >
+
+                <form:layout>
+                
+                    <form:ColumnLayout
+                        columnsL="1"
+                        columnsM="1"
+                        columnsXL="1"
+                        emptyCellsLarge="0"
+                        labelCellsLarge="2"
+                        
+                    >
+                    </form:ColumnLayout>                      
+                </form:layout>
+                
+                <form:FormContainer >
+                    <form:formElements>
+                        <form:FormElement label=" User Name" >
+                            <form:fields>
+                            <Input id="firstname_inp" value="{userprofile>/login/username}"></Input>
+                            </form:fields>
+                        </form:FormElement>
+
+                         <form:FormElement label="Mobile Number" >
+                            <form:fields>
+                            <Input  type="Tel"  value="{userprofile>/mobilenumber}"></Input>
+                            </form:fields>
+                        </form:FormElement>
+
+                        
+                         
+                        <form:FormElement  label="Email-id">
+                            <form:fields>
+                                <Input type="Email" value="{userprofile>/emailid}" liveChange=".validateemail"></Input>
+                            </form:fields>
+                        </form:FormElement>
+
+
+                        <form:FormElement label="Address" >
+                            <form:fields>
+                            <Input  value="{userprofile>/address}"></Input>
+                            </form:fields>
+                        </form:FormElement>
+
+                        <form:FormElement label="Password">
+                            <form:fields>
+                                <Input type="Password" value="{userprofile>/login/password}"></Input>
+                            </form:fields>
+                        </form:FormElement>
+
+                        <form:FormElement label="" >
+                            <form:fields>
+                            <Button 
+                            text="Sign Up"
+                             type="Emphasized"
+                             press="onsignupbuttonpress" 
+                            />
+                            </form:fields>
+                        </form:FormElement>
+                        
+                        
+                    </form:formElements>
+                </form:FormContainer>
+              
+
+            </form:Form>
+            
+        </FlexBox>
+        <endButton>
+            <Button   text="Cancel" press=".onclosesignupdialog"></Button>
+        </endButton>
+
+    </Dialog>
+
+
+
+
+</c:FragmentDefinition>
