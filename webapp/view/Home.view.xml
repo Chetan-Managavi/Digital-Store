@@ -8,7 +8,11 @@
 
     <headerContent>
         
-        <Button text="{i18n>loginbuttonstate}" icon="sap-icon://account"></Button>
+        <Button text="{
+            
+            'parts':['i18n>loginbuttonstate','userprofile>/loggedin'],
+            'formatter': '.formatter.fnchangeloginbtnstate'
+            }" icon="sap-icon://account" press=".onnavloginpress"></Button>
         <Text text="{ 
             parts: ['userprofile>/login/username','userprofile>/loggedin'],
             formatter: '.formatter.fnloginstate'

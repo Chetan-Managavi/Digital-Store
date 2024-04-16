@@ -42,6 +42,8 @@ sap.ui.define(
             .getModel("userprofile")
             .getData().loggedin;
 
+            
+
           this.loginDialog = this.loadFragment({
             name: "com.incture.digitalstore.fragments.Login",
             controller: this,
@@ -60,7 +62,7 @@ sap.ui.define(
             oDialog.close();
           });
         },
-
+        //below functions logs the user in and closes the login dialog
         loginuser: function () {
           this.getView().getModel("userprofile").setProperty("/loggedin", true);
 
@@ -131,6 +133,20 @@ sap.ui.define(
 
 
 
+        },
+        onnavloginpress:function(event)
+        {
+          const loggedin = this.getView()
+            .getModel("userprofile")
+            .getData().loggedin;
+
+            if(loggedin)
+            {
+              this.getView().getModel("userprofile").setProperty("/loggedin", false);
+            }
+            else{
+              this.openlogindialog()
+            }
         }
 
       }

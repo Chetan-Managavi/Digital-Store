@@ -12,6 +12,13 @@ sap.ui.define([
             }else{
                 return " "
             }
+        },
+        fnchangeloginbtnstate:function(loginbtnstate,loggedin){
+            if(loggedin)
+            return "Logout"
+        else
+        return loginbtnstate
+
         }
 
 }})
