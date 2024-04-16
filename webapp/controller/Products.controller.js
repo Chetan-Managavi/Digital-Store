@@ -83,7 +83,7 @@ sap.ui.define(
         },
 
         onAfterRendering: function () {
-          debugger;
+          
         },
 
         showproductdetails: function (oEvent) {

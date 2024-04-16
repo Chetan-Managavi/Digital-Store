@@ -68,7 +68,7 @@ sap.ui.define(
             "logdata",
             this.getView().getModel("userprofile").getData()
           );
-          debugger;
+          
 
           this.loginDialog.then(function (oDialog) {
             oDialog.close();
