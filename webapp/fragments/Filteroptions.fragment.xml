@@ -11,10 +11,10 @@
         <CheckBox text="blue"></CheckBox>
         <CheckBox text="white"></CheckBox>
         <CheckBox text="purple"></CheckBox>
-    </Page>
+    
 
     </VBox>
-
+</Page>
 
 </ResponsivePopover>
 
