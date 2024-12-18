@@ -14,7 +14,7 @@ sap.ui.define([
             formatter:Formatter,
             onInit: function () {
 
-                
+                console.log("entry point")
 
             },
 
